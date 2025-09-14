@@ -29,6 +29,13 @@ export async function fetchNotes(
   return data;
 }
 
+//GET note by id
+
+export async function fetchNoteById(noteId: string): Promise<Note> {
+  const { data } = await apiClient.get<Note>(`/${noteId}`);
+  return data;
+}
+
 //POST create note
 
 export async function createNote(note: CreateNote): Promise<Note> {
@@ -45,10 +52,10 @@ export async function deleteNote(noteId: string): Promise<{ id: string }> {
 
 // PATCH note
 
-export async function updateNote(
-  noteId: string,
-  note: Partial<CreateNote>
-): Promise<Note> {
-  const { data } = await apiClient.patch<Note>(`/${noteId}`, note);
-  return data;
-}
+// export async function updateNote(
+//   noteId: string,
+//   note: Partial<CreateNote>
+// ): Promise<Note> {
+//   const { data } = await apiClient.patch<Note>(`/${noteId}`, note);
+//   return data;
+// }
