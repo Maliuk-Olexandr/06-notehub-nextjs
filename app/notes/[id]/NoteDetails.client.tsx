@@ -4,7 +4,7 @@ import css from './NoteDetails.module.css';
 import { useQuery } from '@tanstack/react-query';
 import { fetchNoteById } from '@/lib/api';
 import { useParams } from 'next/navigation';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
 
 
 export default function NoteDetails() {
